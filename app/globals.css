@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.link {
+  position: relative;
+
+  &::after {
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    border-radius: 10px;
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+    background-color: white;
+    transform: translateX(-50%);
+  }
+
+  &:hover::after {
+    width: 80%;
+  }
+}
+
+.active-link {
+  &::after {
+    width: 80%;
+  }
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+.h-custom {
+  height: calc(100vh - 112px);
+}
